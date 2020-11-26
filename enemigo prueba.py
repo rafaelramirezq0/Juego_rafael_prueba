@@ -23,6 +23,27 @@ class Player(pygame.sprite.Sprite):
     def update(self):
         self.rect.y += self.speed_y 
         self.rect.x += self.speed_x
+        #Limitaciones
+        if self.rect.x >= 365:
+            if self.rect.x >= 365 and self.rect.y <= 210:
+                self.rect.x = 365
+                self.rect.y = 210
+            elif self.rect.x >= 365 and self.rect.y >= 390:
+                self.rect.x = 365
+                self.rect.y = 390
+            self.rect.x = 365
+        elif self.rect.x <= 55:
+            if self.rect.x <= 55 and self.rect.y <= 210:
+                self.rect.x = 55
+                self.rect.y = 210
+            elif self.rect.x <= 55 and self.rect.y >= 390:
+                self.rect.x = 55
+                self.rect.y = 390
+            self.rect.x = 55
+        elif self.rect.y <= 210:
+            self.rect.y = 210
+        elif self.rect.y >= 390:
+            self.rect.y = 390
 class Pelota(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
