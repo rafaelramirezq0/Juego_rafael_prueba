@@ -8,7 +8,7 @@ class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.image = pygame.image.load("player.1.png").convert()
-        self.image.set_colorkey(255,255,255) #Blanco
+        self.image.set_colorkey((255,255,255)) #Blanco
         self.rect = self.image.get_rect()
         self.speed_x = 0
         self.speed_y = 0
@@ -27,7 +27,7 @@ class Pelota(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.image = pygame.image.load("pelota_2.png").convert()
-        self.image.set_colorkey(0,0,0)
+        self.image.set_colorkey((0,0,0))
         self.rect = self.image.get_rect()
 
     def update(self):
@@ -36,7 +36,7 @@ class Pelota2(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.image = pygame.image.load("pelota_2.png").convert()
-        self.image.set_colorkey(0,0,0) #Negro
+        self.image.set_colorkey((0,0,0)) #Negro
         self.rect = self.image.get_rect()
 
     def update(self):
@@ -50,7 +50,7 @@ class enemy(pygame.sprite.Sprite):
       self.lvl = lvl
       self.status = status
       self.image = pygame.image.load("enemigo_1.png").convert()
-      self.image.set_colorkey(255,255,255)
+      self.image.set_colorkey((255,255,255))
       self.rect = self.image.get_rect()
       self.rect.x = 363+ (215)
       self.rect.y = 198+ (100)
@@ -229,7 +229,7 @@ while not done:
     all_sprite_list.update()
 
 
-    screen.fill(255,255,255)
+    screen.fill((255,255,255))
     screen.blit(fondo,[0,0])
     all_sprite_list.draw(screen)
     pygame.display.flip()
